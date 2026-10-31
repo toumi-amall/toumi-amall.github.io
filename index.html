@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amal Toumi – Business Intelligence & Data</title>
+<meta name="description" content="Final-year Business Computing student (BI) at ISG Sousse. Data warehousing, ETL, Power BI, full-stack and Agentic RAG. Seeking a PFE internship.">
+<meta property="og:title" content="Amal Toumi – Business Intelligence & Data">
+<meta property="og:image" content="assets/amal-toumi.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#edf1f7;--card:#fff;--ink:#12203a;--mute:#56627a;--line:#d3dbe8;--acc:#00977f;--acc-ink:#fff;--hi:#ffd23f;--dot:#c9d3e3;color-scheme:light}
+[data-theme=dark]{--bg:#0f1a2e;--card:#16243d;--ink:#e8eef9;--mute:#9aa8c4;--line:#263859;--acc:#3ddbb8;--acc-ink:#0f1a2e;--hi:#ffd23f;--dot:#1c2b47;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 17px/1.6 'Instrument Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg) radial-gradient(var(--dot) 1px,transparent 1px) 0 0/22px 22px;transition:background-color .3s,color .3s}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.logo{font:800 20px 'Bricolage Grotesque';text-decoration:none;margin-right:auto}
+nav a:not(.logo){text-decoration:none;font-size:15px;color:var(--mute)}nav a:not(.logo):hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px;font:500 14px 'Instrument Sans';cursor:pointer}
+@media(max-width:760px){nav a:not(.logo){display:none}}
+section{padding:80px 0}
+h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:10px}
+.lead{color:var(--mute);max-width:56ch;margin-bottom:34px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 0 40px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:14px;margin-bottom:22px}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{box-shadow:0 0 0 7px transparent;opacity:.5}0%{box-shadow:0 0 0 0 var(--acc)}}
+h1{font-size:clamp(38px,6vw,66px);font-weight:800}
+.hero p{color:var(--mute);margin:20px 0 28px;max-width:50ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:12px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);transition:transform .15s,background .2s}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}.btn:hover{transform:translateY(-2px)}
+.btn.s:hover{background:var(--hi);color:#12203a;border-color:var(--hi)}
+.schema{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:12px}
+.schema svg{width:100%;height:auto;display:block}
+.schema .cap{font:400 12.5px 'JetBrains Mono',monospace;color:var(--mute);padding:4px 10px 8px}
+.ln{stroke:var(--line);stroke-width:2;transition:.2s}
+.dim rect{fill:var(--bg);stroke:var(--line);stroke-width:1.5;transition:.2s}
+.dim text{fill:var(--ink);font:600 13px 'Instrument Sans'}.dim .sm{fill:var(--mute);font:400 11px 'JetBrains Mono';}
+.dim:hover rect,.dim:focus rect{fill:var(--hi);stroke:var(--hi)}.dim:hover text,.dim:focus text{fill:#12203a}
+.dim{cursor:pointer;outline:none}
+.fact rect{fill:var(--acc)}.fact text{fill:var(--acc-ink);font:700 14px 'Bricolage Grotesque'}
+.me{display:flex;gap:14px;align-items:center;margin-top:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:860px){.exp{grid-template-columns:1fr}}
+.meta{color:var(--mute);font-size:15px;margin-bottom:14px}
+ul.t{padding-left:20px;display:grid;gap:8px}ul.t li::marker{color:var(--acc)}
+.agents{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.ag{font:500 14px 'JetBrains Mono',monospace;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;transition:.15s}
+.ag:hover{border-color:var(--acc)}.ag[aria-pressed=true]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.ag.o{flex-basis:100%;text-align:center}
+#agtxt{background:var(--bg);border-left:4px solid var(--acc);border-radius:8px;padding:12px 16px;min-height:76px;font-size:15.5px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 16px;font:500 15px 'Instrument Sans';cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.console{font:400 14px/1.5 'JetBrains Mono',monospace;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:18px;overflow-x:auto;white-space:nowrap}
+.console b{color:var(--acc)}.console em{color:var(--mute);font-style:normal;margin-left:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.proj{display:flex;flex-direction:column;gap:10px;transition:transform .2s,border-color .2s}.proj:hover{transform:translateY(-4px);border-color:var(--acc)}
+.proj h3{font-size:22px}.proj p{color:var(--mute);font-size:15.5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.tags span{font:400 12.5px 'JetBrains Mono',monospace;background:var(--bg);border-radius:6px;padding:3px 8px}
+.proj[hidden]{display:none}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.sk h3{font-size:19px;margin-bottom:12px}
+.sk .tags span{font-family:'Instrument Sans';font-size:14px;padding:4px 10px;border:1px solid var(--line);background:var(--bg);transition:.15s}
+.sk .tags span:hover{background:var(--hi);color:#12203a;border-color:var(--hi);transform:rotate(-2deg)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.edu h3{font-size:20px;margin-bottom:6px}
+.lang{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.lang span{background:var(--bg);border-radius:10px;padding:6px 12px;font-size:15px}
+.cta{text-align:center;background:var(--ink);color:var(--bg);border-radius:26px;padding:56px 24px}
+.cta h2{margin-bottom:14px}.cta p{opacity:.8;margin-bottom:26px}
+.cta .btn{border-color:var(--bg);color:var(--bg)}.cta .btn.p{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#top">amal.toumi</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a><button id="theme" aria-label="Switch between light and dark theme">Dark mode</button></div></nav>
+
+<main id="top">
+<div class="wrap hero">
+ <div>
+  <span class="pill"><i></i>Open to a PFE internship, 2027</span>
+  <h1>I turn raw data into decisions, and build the apps around them.</h1>
+  <p>Final-year Business Computing student (Business Intelligence) at ISG Sousse. Data warehouses, ETL pipelines, BI dashboards, full-stack development and an Agentic RAG platform built at ITGate Group.</p>
+  <div class="btns"><a class="btn p" href="#projects">See my work</a><a class="btn s" href="#contact">Get in touch</a><a class="btn" href="https://github.com/toumi-amall" target="_blank" rel="noopener">GitHub</a></div>
+ </div>
+ <div>
+  <div class="schema">
+   <svg viewBox="0 0 480 400" role="group" aria-label="Star schema of my portfolio: click a table to jump to its section">
+    <g class="lines"><line class="ln" x1="240" y1="200" x2="95" y2="318"/><line class="ln" x1="240" y1="200" x2="385" y2="318"/><line class="ln" x1="240" y1="200" x2="95" y2="82"/><line class="ln" x1="240" y1="200" x2="385" y2="82"/></g>
+    <clipPath id="c"><circle cx="240" cy="188" r="50"/></clipPath>
+    <circle cx="240" cy="188" r="56" fill="var(--acc)"/>
+    <image href="assets/amal-toumi.jpg" x="190" y="138" width="100" height="100" clip-path="url(#c)" preserveAspectRatio="xMidYMid slice"/>
+    <g class="fact"><rect x="180" y="236" width="120" height="30" rx="8"/><text x="240" y="256" text-anchor="middle">fact_amal</text></g>
+    <a class="dim" href="#experience" tabindex="0"><rect x="30" y="58" width="130" height="50" rx="10"/><text x="45" y="79">dim_experience</text><text class="sm" x="45" y="96">ITGate · 2026</text></a>
+    <a class="dim" href="#projects" tabindex="0"><rect x="320" y="58" width="130" height="50" rx="10"/><text x="335" y="79">dim_projects</text><text class="sm" x="335" y="96">5 rows</text></a>
+    <a class="dim" href="#skills" tabindex="0"><rect x="30" y="294" width="130" height="50" rx="10"/><text x="45" y="315">dim_skills</text><text class="sm" x="45" y="332">5 groups</text></a>
+    <a class="dim" href="#education" tabindex="0"><rect x="320" y="294" width="130" height="50" rx="10"/><text x="335" y="315">dim_education</text><text class="sm" x="335" y="332">B.Sc. · 2027</text></a>
+   </svg>
+   <div class="cap">-- my portfolio, modelled as a star schema. Click a table.</div>
+  </div>
+ </div>
+</div>
+
+<section id="experience"><div class="wrap">
+ <h2>Experience</h2><p class="lead">Summer 2026 at ITGate Group, Tunisia.</p>
+ <div class="exp">
+  <div class="card">
+   <h3>Intelligent Document Automation Agent</h3>
+   <p class="meta">Intern, ITGate Group</p>
+   <ul class="t">
+    <li>Built an Agentic RAG platform where users upload PDF, DOCX or TXT files (with an OCR path) and query them in natural language.</li>
+    <li>Working prototype with three interfaces: web app, REST API and Slack bot.</li>
+    <li>Application security: JWT authentication, email verification, token revocation at logout, and admin access enforced at three layers (interface, API dependency, database role).</li>
+    <li>GDPR features: account deletion with cascading removal of user data, and personal data export in JSON.</li>
+    <li>Modular FastAPI backend, Next.js/React interface, Docker-based deployment, and the project specification document.</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h3>How the agents work</h3>
+   <p class="meta">One orchestrator, five sub-agents (LangChain). Tap one.</p>
+   <div class="agents" id="agents"></div>
+   <div id="agtxt" aria-live="polite"></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2><p class="lead">Filter the table, like you would in SQL.</p>
+ <div class="chips" id="chips" role="group" aria-label="Filter projects"></div>
+ <div class="console" id="q"></div>
+ <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Skills</h2><p class="lead">The stack behind the projects.</p>
+ <div class="sk">
+  <div class="card"><h3>Data and BI</h3><div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>Power BI (DAX)</span><span>pandas</span><span>Matplotlib</span><span>Star schema</span><span>ETL (pygrametl)</span><span>KPI design</span></div></div>
+  <div class="card"><h3>Languages, web and mobile</h3><div class="tags"><span>Python</span><span>SQL</span><span>PHP</span><span>JavaScript</span><span>HTML/CSS</span><span>FastAPI</span><span>React / Next.js</span><span>Flutter</span></div></div>
+  <div class="card"><h3>AI</h3><div class="tags"><span>LangChain</span><span>RAG</span><span>ChromaDB</span><span>sentence-transformers</span><span>OpenCV</span><span>LLM integration</span></div></div>
+  <div class="card"><h3>Security</h3><div class="tags"><span>JWT authentication</span><span>RBAC</span><span>Token revocation</span><span>GDPR</span></div></div>
+  <div class="card"><h3>Tools and methods</h3><div class="tags"><span>Docker</span><span>Git</span><span>Jupyter</span><span>IBM RSA</span><span>StarUML</span><span>Unified Process</span><span>UML</span><span>Agile/Scrum</span><span>MVC</span><span>OOP</span></div></div>
+ </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education and training</h2><p class="lead">&nbsp;</p>
+ <div class="edu">
+  <div class="card"><h3>Bachelor’s in Business Computing, Business Intelligence</h3><p class="meta">ISG Sousse, expected 2027</p><p>Multidimensional modeling and data warehousing, business intelligence, data mining, database design (PL/SQL Oracle), web and mobile development, software testing, software engineering (UML/UP), algorithms and OOP.</p></div>
+  <div class="card"><h3>Certifications</h3><ul class="t"><li>Mobile Development (Flutter), 2-day bootcamp, 9antra.tn × IEEE ESSTHS, April 2026</li><li>Digital Twins and Industry 4.0, IEEE IAS Innosphere Virtual Summit</li></ul>
+   <div class="lang"><span>Arabic: native</span><span>French: C1</span><span>English: C1 (EFSET), B1 (Amideast)</span></div></div>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="cta">
+ <h2>Looking for a PFE intern in BI, data or AI?</h2>
+ <p>Let’s talk about a final-year project in Business Intelligence, data engineering, AI or software development.</p>
+ <div class="btns" style="justify-content:center"><a class="btn p" href="mailto:amaltoumi099@gmail.com">amaltoumi099@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/toumi-amal-7774163ab" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/toumi-amall" target="_blank" rel="noopener">GitHub</a></div>
+</div></div></section>
+</main>
+<footer>© 2026 Amal Toumi, Sousse, Tunisia</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+// theme
+const root=document.documentElement,tb=$('#theme');
+function setT(t){root.dataset.theme=t;tb.textContent=t==='dark'?'Light mode':'Dark mode';try{localStorage.setItem('t',t)}catch(e){}}
+let st=null;try{st=localStorage.getItem('t')}catch(e){}
+setT(st||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+tb.onclick=()=>setT(root.dataset.theme==='dark'?'light':'dark');
+// agents
+const A={orchestrator:'Receives each request and routes it to the right sub-agent, then assembles the answer.',ingestion:'Accepts PDF, DOCX and TXT files, with an OCR path for scanned documents.',storage:'Chunks the text, embeds it with sentence-transformers and stores the vectors in ChromaDB.',analysis:'Analyses the content of uploaded documents.',search:'Semantic retrieval in ChromaDB to answer questions asked in natural language.',reporting:'Turns the results into a report for the user.'};
+const ag=$('#agents');
+Object.keys(A).forEach((k,i)=>{const b=document.createElement('button');b.className='ag'+(i?'':' o');b.textContent=k;b.setAttribute('aria-pressed','false');b.onclick=()=>{ag.querySelectorAll('.ag').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#agtxt').textContent=A[k]};ag.append(b)});
+ag.firstChild.click();
+// projects
+const P=[
+['ITGate Document Agent','Agentic RAG platform: multi-agent LangChain system, ChromaDB retrieval, FastAPI backend, Next.js interface, Slack bot.',['AI','Web'],['FastAPI','Next.js','LangChain','ChromaDB','Docker']],
+['E-Commerce Data Warehouse and BI Dashboard','PostgreSQL star schema (Ventes fact table, 4 dimensions), Python ETL with a data-quality audit and upsert-safe loading, KPIs (revenue, average basket, satisfaction, sales growth) on a live Matplotlib dashboard.',['BI'],['PostgreSQL','pandas','pygrametl','Matplotlib']],
+['Supply Chain Dashboard','Power BI dashboard on the SCMS/USAID dataset with DAX measures and 5 KPIs, documented in a written report.',['BI'],['Power BI','DAX']],
+['CityCare, municipal complaint platform','Multi-role web app (citizen, agent, admin) with session authentication, email notifications and automatic complaint assignment. Delivered in Scrum sprints.',['Web'],['PHP','MySQL','PDO','PHPMailer']],
+['SGRH, HR management system','Full UML suite with IBM RSA: 31 use cases, 5 actors, class, sequence and deployment diagrams (Unified Process).',['Modeling'],['UML','IBM RSA','UP']]];
+const F=['All','BI','AI','Web','Modeling'];let cur='All';
+function draw(){
+ $('#chips').innerHTML='';F.forEach(f=>{const b=document.createElement('button');b.className='chip';b.textContent=f;b.setAttribute('aria-pressed',f===cur);b.onclick=()=>{cur=f;draw()};$('#chips').append(b)});
+ const r=P.filter(p=>cur==='All'||p[2].includes(cur));
+ $('#q').innerHTML='<b>SELECT</b> * <b>FROM</b> projects'+(cur==='All'?'':' <b>WHERE</b> domain = \''+cur+'\'')+'; <em>-- '+r.length+' row'+(r.length>1?'s':'')+'</em>';
+ $('#grid').innerHTML=r.map(p=>'<article class="card proj"><h3>'+p[0]+'</h3><p>'+p[1]+'</p><div class="tags">'+p[3].map(t=>'<span>'+t+'</span>').join('')+'</div></article>').join('');
+}
+draw();
+</script>
+</body>
+</html>
